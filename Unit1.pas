@@ -22,7 +22,11 @@ type
 var
   Form1: TForm1;
   // criando uma variavel no delphi
-   var1 : string;
+   //var1 : string;
+   //var2 : Integer;
+   //var2 : real;
+   //var2: Double;
+   var2 :Currency;   // Monetario
 
 implementation
 
@@ -30,8 +34,19 @@ implementation
 
 procedure TForm1.Button1Click(Sender: TObject);
 begin
-   var1 := 'Farley';
-   edit1.Text := var1;
+
+    // Exe 1
+
+   //var1 := 'Farley';
+
+   // Exe2
+   //var2:=1000;
+   //edit1.Text := IntToStr(var2);
+
+   //Exe3
+   var2:=1000.10;
+   edit1.Text := FloatToStr(var2);
+
 end;
 
 end.
