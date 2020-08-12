@@ -3,7 +3,7 @@ Coordinates=10,10,104,36
 Visible=True
 
 []
-Coordinates=0,0,91,36
+Coordinates=282,78,80,58
 
 [BindSourceContatos]
 Coordinates=370,70,132,168
@@ -26,4 +26,25 @@ Coordinates=620,170,44,58
 
 [BindingsList1]
 Coordinates=133,1,91,36
+
+[Label1]
+Coordinates=133,1,53,58
+
+[Label2]
+Coordinates=114,65,53,58
+
+[Label3]
+Coordinates=55,65,53,58
+
+[Label4]
+Coordinates=131,161,53,58
+
+[DBNavigator1]
+Coordinates=282,1,94,58
+
+[DataSource1]
+Coordinates=272,161,89,36
+
+[DBGrid1]
+Coordinates=62,161,64,36
 

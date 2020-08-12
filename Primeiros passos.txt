@@ -14,3 +14,14 @@ Acessando o Banco de Dados com Delphi
  Diver Id MsAcc
  Database Colocar o caminho do banco do Acces
  Live Binds editar Conexao -> create data source -> FireDac -> comand Text -> contatos -> Finish
+
+-> Navigator
+TDBNAVIGATOR
+É conectado a um data source 
+TODO DATASOURCE PRECISA DE UM DATA SET O DATA SET VAI SER CONFIGURADO APONTANDO PARA CONEXAO TFDConnection
+E TODO TDBNAVIGATOR CONECTA A UM DATASOURCE
+
+-> TStringGrid
+
+->  DBGRID
+CONECTA A UM DATASOURCE

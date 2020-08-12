@@ -2,8 +2,8 @@ object FORM_CONTATOS: TFORM_CONTATOS
   Left = 0
   Top = 0
   Caption = 'Gest'#227'o De Contatos'
-  ClientHeight = 426
-  ClientWidth = 970
+  ClientHeight = 300
+  ClientWidth = 635
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -121,41 +121,20 @@ object FORM_CONTATOS: TFORM_CONTATOS
     TabOrder = 3
     Text = 'farley.souza@univale.br'
   end
-  object DBNavigator1: TDBNavigator
-    Left = 64
-    Top = 214
-    Width = 360
-    Height = 49
-    DataSource = DataSource1
-    TabOrder = 4
-  end
-  object DBGrid1: TDBGrid
-    Left = 439
-    Top = 46
-    Width = 523
-    Height = 243
-    DataSource = DataSource1
-    TabOrder = 5
-    TitleFont.Charset = DEFAULT_CHARSET
-    TitleFont.Color = clWindowText
-    TitleFont.Height = -11
-    TitleFont.Name = 'Tahoma'
-    TitleFont.Style = []
-  end
   object FDConnection1: TFDConnection
     Params.Strings = (
       'Database=C:\MyGit\Delphi\Win32\Debug\assets\contatos.mdb'
       'DriverID=MSAcc')
     Connected = True
     LoginPrompt = False
-    Left = 8
-    Top = 352
+    Left = 24
+    Top = 240
   end
   object BindSourceContatos: TBindSourceDB
     DataSet = FDTableContatos
     ScopeMappings = <>
-    Left = 200
-    Top = 352
+    Left = 216
+    Top = 240
   end
   object FDTableContatos: TFDTable
     Active = True
@@ -163,8 +142,8 @@ object FORM_CONTATOS: TFORM_CONTATOS
     Connection = FDConnection1
     UpdateOptions.UpdateTableName = 'Contatos'
     TableName = 'Contatos'
-    Left = 96
-    Top = 352
+    Left = 112
+    Top = 240
   end
   object BindingsList1: TBindingsList
     Methods = <>
@@ -199,10 +178,5 @@ object FORM_CONTATOS: TFORM_CONTATOS
       Control = Edit4
       Track = True
     end
-  end
-  object DataSource1: TDataSource
-    DataSet = FDTableContatos
-    Left = 288
-    Top = 352
   end
 end
