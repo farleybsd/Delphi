@@ -13,6 +13,7 @@ type
     REAL: TEdit;
     Label1: TLabel;
     Label2: TLabel;
+    COMPRA: TButton;
     procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
@@ -53,10 +54,11 @@ begin
 
    if DOLAR.Text = '' then
        BEGIN
-          ShowMessage('Digite valor em Dolar');
+          SHOWMESSAGE('Digite valor em Dolar');
        END
    ELSE
         BEGIN
+            COMPRA.Enabled=true;
             VARREAL := StrToFloat(DOLAR.Text) * 3.9;
             REAL.Text := FloatToStr(VARREAL);
         END;

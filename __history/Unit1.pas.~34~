@@ -13,7 +13,9 @@ type
     REAL: TEdit;
     Label1: TLabel;
     Label2: TLabel;
+    COMPRA: TButton;
     procedure Button1Click(Sender: TObject);
+    procedure COMPRAClick(Sender: TObject);
   private
     { Private declarations }
     // variaveis locais do formulario
@@ -30,7 +32,8 @@ var
    //var2 : real;
    //var2: Double;
    //var2 :Currency;   // Monetario
-   VARREAL : real
+   VARREAL : real;
+   VARNOME : STRING;
 
 implementation
 
@@ -51,8 +54,22 @@ begin
    //var2:=1000.10;
    //edit1.Text := FloatToStr(var2);
 
+   if DOLAR.Text = '' then
+       BEGIN
+          SHOWMESSAGE('Digite valor em Dolar');
+       END
+   ELSE
+        BEGIN
+            COMPRA.Enabled:=true;
+            VARREAL := StrToFloat(DOLAR.Text) * 3.9;
+            REAL.Text := FloatToStr(VARREAL);
+        END;
 
+end;
 
+procedure TForm1.COMPRAClick(Sender: TObject);
+begin
+    VARNOME := InputBox('Nome','Digite SEU Nome','');
 end;
 
 end.
