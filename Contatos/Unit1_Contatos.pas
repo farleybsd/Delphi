@@ -1,0 +1,24 @@
+unit Unit1_Contatos;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs;
+
+type
+  TFORM_CONTATOS = class(TForm)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FORM_CONTATOS: TFORM_CONTATOS;
+
+implementation
+
+{$R *.dfm}
+
+end.
