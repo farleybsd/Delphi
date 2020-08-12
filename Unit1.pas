@@ -71,7 +71,14 @@ end;
 procedure TForm1.COMPRAClick(Sender: TObject);
 begin
     VARNOME := INPUTBOX('NOME','Digite SEU Nome','');
-    MSG.Caption := 'PARABENS ' + VARNOME + ' , Voçe Comprou' + DOLAR.Text + ' DOLAR (ES)';
+
+    if (VARNOME <> '') AND (DOLAR.Text <> '0') then
+      BEGIN
+            MSG.Caption := 'PARABENS ' + VARNOME + ' , Voçe Comprou' + DOLAR.Text + ' DOLAR (ES)';
+      END
+    Else
+           ShowMessage('Falta Nome ou Dolar tem que ser >0');
+
 end;
 
 end.
