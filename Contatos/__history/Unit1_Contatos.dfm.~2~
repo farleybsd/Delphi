@@ -14,32 +14,32 @@ object FORM_CONTATOS: TFORM_CONTATOS
   PixelsPerInch = 96
   TextHeight = 13
   object Edit1: TEdit
-    Left = 8
-    Top = 64
+    Left = 40
+    Top = 32
     Width = 121
     Height = 21
     TabOrder = 0
     Text = '1'
   end
   object Edit2: TEdit
-    Left = 8
-    Top = 91
+    Left = 40
+    Top = 59
     Width = 121
     Height = 21
     TabOrder = 1
     Text = 'Farley'
   end
   object Edit3: TEdit
-    Left = 8
-    Top = 118
+    Left = 40
+    Top = 86
     Width = 121
     Height = 21
     TabOrder = 2
     Text = '991057769'
   end
   object Edit4: TEdit
-    Left = 8
-    Top = 145
+    Left = 40
+    Top = 113
     Width = 121
     Height = 21
     TabOrder = 3
@@ -51,14 +51,14 @@ object FORM_CONTATOS: TFORM_CONTATOS
       'DriverID=MSAcc')
     Connected = True
     LoginPrompt = False
-    Left = 24
-    Top = 240
+    Left = 592
+    Top = 32
   end
   object BindSourceContatos: TBindSourceDB
     DataSet = FDTableContatos
     ScopeMappings = <>
-    Left = 216
-    Top = 240
+    Left = 576
+    Top = 152
   end
   object FDTableContatos: TFDTable
     Active = True
@@ -66,8 +66,8 @@ object FORM_CONTATOS: TFORM_CONTATOS
     Connection = FDConnection1
     UpdateOptions.UpdateTableName = 'Contatos'
     TableName = 'Contatos'
-    Left = 112
-    Top = 240
+    Left = 584
+    Top = 88
   end
   object BindingsList1: TBindingsList
     Methods = <>

@@ -1,0 +1,16 @@
+Primeiros passos 
+Create Project -> Windows VCL Aplication
+
+Acessando o Banco de Dados com Delphi
+
+1 Primeiro Componente de Conexao
+
+ -> TFDConnection
+ Ponte entre o  formulário e o  banco de Dados
+ CLicar no formulário  BindVisual
+ LoginPrompt = False
+ Visivel Element = true
+ CLicar Duas vezes no Objeto TFDConnection
+ Diver Id MsAcc
+ Database Colocar o caminho do banco do Acces
+ Live Binds editar Conexao -> create data source -> FireDac -> comand Text -> contatos -> Finish
