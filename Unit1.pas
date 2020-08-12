@@ -9,7 +9,10 @@ uses
 type
   TForm1 = class(TForm)
     Button1: TButton;
-    Edit1: TEdit;
+    DOLAR: TEdit;
+    REAL: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
     procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
@@ -26,7 +29,8 @@ var
    //var2 : Integer;
    //var2 : real;
    //var2: Double;
-   var2 :Currency;   // Monetario
+   //var2 :Currency;   // Monetario
+   VARREAL : real;
 
 implementation
 
@@ -44,8 +48,18 @@ begin
    //edit1.Text := IntToStr(var2);
 
    //Exe3
-   var2:=1000.10;
-   edit1.Text := FloatToStr(var2);
+   //var2:=1000.10;
+   //edit1.Text := FloatToStr(var2);
+
+   if DOLAR.Text = '' then
+       BEGIN
+          SHOWMESSAGE('Digite valor em Dolar');
+       END
+   ELSE
+        BEGIN
+            VARREAL := StrToFloat(DOLAR.Text) * 3.9;
+            REAL.Text := FloatToStr(VARREAL);
+        END;
 
 end;
 

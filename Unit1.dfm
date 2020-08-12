@@ -13,21 +13,59 @@ object Form1: TForm1
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 13
+  object Label1: TLabel
+    Left = 120
+    Top = 40
+    Width = 34
+    Height = 13
+    Caption = 'DOLAR'
+  end
+  object Label2: TLabel
+    Left = 248
+    Top = 40
+    Width = 25
+    Height = 13
+    Caption = 'REAL'
+  end
   object Button1: TButton
-    Left = 264
-    Top = 112
-    Width = 75
-    Height = 25
+    Left = 520
+    Top = 248
+    Width = 113
+    Height = 49
     Caption = 'Button1'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 0
     OnClick = Button1Click
   end
-  object Edit1: TEdit
-    Left = 120
-    Top = 114
+  object DOLAR: TEdit
+    Left = 112
+    Top = 66
     Width = 121
-    Height = 21
+    Height = 31
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 1
-    Text = 'Edit1'
+  end
+  object REAL: TEdit
+    Left = 248
+    Top = 66
+    Width = 121
+    Height = 31
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 2
   end
 end
