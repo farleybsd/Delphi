@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2020/08/12 19:38:41.129,=C:\Users\farley.rufino\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/08/12 19:39:58.275,C:\MyGit\Delphi\Contatos\Unit1_Contatos.pas=C:\Users\farley.rufino\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/08/12 19:39:58.275,C:\MyGit\Delphi\Contatos\Unit1_Contatos.dfm=C:\Users\farley.rufino\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2020/08/12 20:40:18.368,C:\MyGit\Delphi\Contatos\Project1.dproj=C:\Users\farley.rufino\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

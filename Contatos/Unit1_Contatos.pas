@@ -34,6 +34,10 @@ type
     DBNavigator1: TDBNavigator;
     DataSource1: TDataSource;
     DBGrid1: TDBGrid;
+    Memo1: TMemo;
+    LinkControlToField5: TLinkControlToField;
+    Button1: TButton;
+    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -46,5 +50,10 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TFORM_CONTATOS.Button1Click(Sender: TObject);
+begin
+ FORM_CONTATOS.Close;
+end;
 
 end.

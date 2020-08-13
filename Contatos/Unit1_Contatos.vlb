@@ -6,7 +6,7 @@ Visible=True
 Coordinates=282,78,80,58
 
 [BindSourceContatos]
-Coordinates=370,70,132,168
+Coordinates=370,70,132,190
 
 [FDTableContatos]
 Coordinates=114,65,115,36
@@ -47,4 +47,10 @@ Coordinates=272,161,89,36
 
 [DBGrid1]
 Coordinates=62,161,64,36
+
+[Memo1]
+Coordinates=830,60,64,58
+
+[Button1]
+Coordinates=414,1,59,58
 

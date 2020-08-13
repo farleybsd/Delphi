@@ -2,7 +2,7 @@ object FORM_CONTATOS: TFORM_CONTATOS
   Left = 0
   Top = 0
   Caption = 'Gest'#227'o De Contatos'
-  ClientHeight = 426
+  ClientHeight = 518
   ClientWidth = 970
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -131,7 +131,7 @@ object FORM_CONTATOS: TFORM_CONTATOS
   end
   object DBGrid1: TDBGrid
     Left = 439
-    Top = 46
+    Top = 71
     Width = 523
     Height = 243
     DataSource = DataSource1
@@ -141,6 +141,34 @@ object FORM_CONTATOS: TFORM_CONTATOS
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+  end
+  object Memo1: TMemo
+    Left = 439
+    Top = 320
+    Width = 514
+    Height = 161
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 6
+  end
+  object Button1: TButton
+    Left = 856
+    Top = 8
+    Width = 81
+    Height = 49
+    Caption = 'sair'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -24
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 7
+    OnClick = Button1Click
   end
   object FDConnection1: TFDConnection
     Params.Strings = (
@@ -198,6 +226,13 @@ object FORM_CONTATOS: TFORM_CONTATOS
       FieldName = 'Email'
       Control = Edit4
       Track = True
+    end
+    object LinkControlToField5: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceContatos
+      FieldName = 'observacoes'
+      Control = Memo1
+      Track = False
     end
   end
   object DataSource1: TDataSource
