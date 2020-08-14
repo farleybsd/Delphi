@@ -28,6 +28,9 @@ type
     DataSource1: TDataSource;
     btn_Novo: TButton;
     btn_Gravar: TButton;
+    Button1: TButton;
+    status: TLabel;
+    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -40,5 +43,19 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+FDConnection1.Params.Database:=  GetCurrentDir+'\assets\contatos.mdb';
+FDConnection1.Connected :=true;
+FDContatos.TableName := 'contatos';
+FDContatos.Active :=true;
+
+if FDConnection1.Connected then
+  begin
+  status.Caption := 'Conectado';
+  end;
+
+end;
 
 end.

@@ -78,6 +78,18 @@ object Form1: TForm1
     Font.Style = []
     ParentFont = False
   end
+  object status: TLabel
+    Left = 248
+    Top = 248
+    Width = 7
+    Height = 28
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -23
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
   object txt_ID: TEdit
     Left = 96
     Top = 8
@@ -172,6 +184,15 @@ object Form1: TForm1
     Font.Style = []
     ParentFont = False
     TabOrder = 6
+  end
+  object Button1: TButton
+    Left = 336
+    Top = 8
+    Width = 105
+    Height = 57
+    Caption = 'Button1'
+    TabOrder = 7
+    OnClick = Button1Click
   end
   object FDConnection1: TFDConnection
     Params.Strings = (
