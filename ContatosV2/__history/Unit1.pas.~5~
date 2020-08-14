@@ -24,10 +24,7 @@ type
     txt_Telefone: TEdit;
     txt_observacao: TMemo;
     FDConnection1: TFDConnection;
-    FDContatos: TFDTable;
-    DataSource1: TDataSource;
-    btn_Novo: TButton;
-    btn_Gravar: TButton;
+    FDTable1: TFDTable;
   private
     { Private declarations }
   public

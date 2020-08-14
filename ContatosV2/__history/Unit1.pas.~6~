@@ -25,9 +25,6 @@ type
     txt_observacao: TMemo;
     FDConnection1: TFDConnection;
     FDContatos: TFDTable;
-    DataSource1: TDataSource;
-    btn_Novo: TButton;
-    btn_Gravar: TButton;
   private
     { Private declarations }
   public

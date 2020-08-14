@@ -40,11 +40,17 @@ Atalho f12 para alternar codigo e desingner
 * Driver Id MsAcc
 * Database caminho do Banco
 
+- Conectando com a tabela
+->TFDTable -> Alerar o nome para nome da tabela tipo contato
+-> Observacao verificar o connection  se esta conectado TFDConnection
 
-
+->DATASOURCE  
+- LIGA A TABELA AOS COMPONENTES VISUAIS
+- DataSet ligar a a tabela TFDTable
 
 
 
 Passo a passo conectado ao banco
  1 ° -> Conectar ao banco TFDConnection
- 
+ 2 ° -> Conectando com a tabela
+ 3 ° DATASOURCE  LIGA A TABELA AOS COMPONENTES VISUAIS
