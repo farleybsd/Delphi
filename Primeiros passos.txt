@@ -28,3 +28,23 @@ CONECTA A UM DATASOURCE
 
 -> Tmemo ou dbmeno
 Tmemo USAR BindVisual dbmeno DATASOURCE DEPOIS CAMPO DATAFIELD
+
+
+Atalho f12 para alternar codigo e desingner
+
+
+-> Fazendo CRUD VIA codigo
+
+- conectado ao Banco
+-> TFDConnection -> Dois Cliques ->
+* Driver Id MsAcc
+* Database caminho do Banco
+
+
+
+
+
+
+Passo a passo conectado ao banco
+ 1 ° -> Conectar ao banco TFDConnection
+ 
