@@ -9,7 +9,7 @@ uses
   FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys,
   FireDAC.Phys.MSAcc, FireDAC.Phys.MSAccDef, FireDAC.VCLUI.Wait,
   FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt, Data.DB,
-  FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.Buttons;
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.Buttons, Vcl.Grids, Vcl.DBGrids;
 
 type
   TForm1 = class(TForm)
@@ -36,6 +36,8 @@ type
     btn_Cancelar: TButton;
     txt_procura: TEdit;
     SpeedButton1: TSpeedButton;
+    DBGrid1: TDBGrid;
+    SpeedButton2: TSpeedButton;
     procedure  carrega;
     procedure limpar;
     procedure bloqueia;
@@ -49,6 +51,8 @@ type
     procedure btn_EditarClick(Sender: TObject);
     procedure btn_CancelarClick(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
+    procedure SpeedButton2Click(Sender: TObject);
+    procedure DBGrid1DblClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -91,6 +95,11 @@ begin
      carrega;
 end;
 
+procedure TForm1.SpeedButton2Click(Sender: TObject);
+begin
+  Form1.close;
+end;
+
 procedure TForm1.carrega;
 begin
   txt_ID.Text             := FDContatos.FieldByName('id').Value;
@@ -101,6 +110,11 @@ if FDContatos.FieldByName('observacoes').Value = NULL then
 txt_observacao.Text := ''
 else
   txt_observacao.Text     := FDContatos.FieldByName('observacoes').Value;
+end;
+
+procedure TForm1.DBGrid1DblClick(Sender: TObject);
+begin
+ carrega;
 end;
 
 procedure TForm1.btn_CancelarClick(Sender: TObject);
