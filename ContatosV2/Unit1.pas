@@ -28,9 +28,11 @@ type
     DataSource1: TDataSource;
     btn_Novo: TButton;
     btn_Gravar: TButton;
-    Button1: TButton;
     status: TLabel;
+    Button1: TButton;
     Button2: TButton;
+    procedure  carrega;
+    procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
   private
@@ -48,6 +50,26 @@ implementation
 
 procedure TForm1.Button1Click(Sender: TObject);
 begin
+ FDContatos.Next;
+ carrega;
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+   FDContatos.Prior;
+   carrega;
+end;
+
+procedure TForm1.carrega;
+begin
+  txt_ID.Text             := FDContatos.FieldByName('id').Value;
+  txt_Nome.Text           := FDContatos.FieldByName('nome').Value;
+  txt_Email.Text          := FDContatos.FieldByName('email').Value;
+  txt_Telefone.Text       := FDContatos.FieldByName('telefone').Value;
+  txt_observacao.Text     := FDContatos.FieldByName('observacoes').Value;
+end;
+procedure TForm1.FormCreate(Sender: TObject);
+begin
 FDConnection1.Params.Database:=  GetCurrentDir+'\assets\contatos.mdb';
 FDConnection1.Connected :=true;
 FDContatos.TableName := 'contatos';
@@ -56,17 +78,9 @@ FDContatos.Active :=true;
 if FDConnection1.Connected then
   begin
   status.Caption := 'Conectado';
+  carrega;
   end;
 
-end;
-
-procedure TForm1.Button2Click(Sender: TObject);
-begin
-  txt_ID.Text             := FDContatos.FieldByName('id').Value;
-  txt_Nome.Text           := FDContatos.FieldByName('nome').Value;
-  txt_Email.Text          := FDContatos.FieldByName('email').Value;
-  txt_Telefone.Text       := FDContatos.FieldByName('telefone').Value;
-  txt_observacao.Text     := FDContatos.FieldByName('observacoes').Value;
 end;
 
 end.

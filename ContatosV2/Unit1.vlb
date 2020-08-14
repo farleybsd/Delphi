@@ -19,9 +19,6 @@ Coordinates=10,78,48,58
 [btn_Novo]
 Coordinates=224,78,69,58
 
-[Button1]
-Coordinates=10,214,59,58
-
 [Label4]
 Coordinates=300,146,53,58
 
@@ -47,5 +44,5 @@ Coordinates=185,10,53,58
 Coordinates=10,10,102,58
 
 []
-Coordinates=387,270,91,36
+Coordinates=10,214,59,58
 
