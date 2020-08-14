@@ -32,8 +32,12 @@ type
     Button1: TButton;
     Button2: TButton;
     procedure  carrega;
+    procedure limpar;
+    procedure bloqueia;
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure btn_NovoClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -47,10 +51,25 @@ implementation
 
 {$R *.dfm}
 
-procedure TForm1.Button1Click(Sender: TObject);
+procedure Tform1.bloqueia;
 begin
- FDContatos.Next;
- carrega;
+  // Bloqueia Campos
+
+  txt_Nome.Enabled           :=   not     txt_Nome.Enabled;
+  txt_Email.Enabled          :=   not     txt_Email.Enabled;
+  txt_Telefone.Enabled       :=   not     txt_Telefone.Enabled;
+  txt_observacao.Enabled     :=   not     txt_observacao.Enabled;
+
+end;
+procedure Tform1.limpar;
+begin
+  //Limar Campos
+  txt_ID.Text                 := '';
+  txt_Nome.text               := '';
+  txt_Email.text              := '';
+  txt_Telefone.text           := '';
+  txt_observacao.text         := '';
+  txt_Nome.SetFocus;
 end;
 
 procedure TForm1.carrega;
@@ -59,8 +78,31 @@ begin
   txt_Nome.Text           := FDContatos.FieldByName('nome').Value;
   txt_Email.Text          := FDContatos.FieldByName('email').Value;
   txt_Telefone.Text       := FDContatos.FieldByName('telefone').Value;
+if FDContatos.FieldByName('observacoes').Value = NULL then
+txt_observacao.Text := ''
+else
   txt_observacao.Text     := FDContatos.FieldByName('observacoes').Value;
 end;
+
+procedure TForm1.btn_NovoClick(Sender: TObject);
+begin
+FDContatos.Insert;
+bloqueia;
+limpar;
+end;
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+ FDContatos.Next;
+ carrega;
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+   FDContatos.Prior;
+   carrega;
+end;
+
 procedure TForm1.FormCreate(Sender: TObject);
 begin
 FDConnection1.Params.Database:=  GetCurrentDir+'\assets\contatos.mdb';

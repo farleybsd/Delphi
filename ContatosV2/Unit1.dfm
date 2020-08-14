@@ -176,6 +176,7 @@ object Form1: TForm1
     Font.Style = []
     ParentFont = False
     TabOrder = 5
+    OnClick = btn_NovoClick
   end
   object btn_Gravar: TButton
     Left = 96
@@ -190,6 +191,7 @@ object Form1: TForm1
     Font.Style = []
     ParentFont = False
     TabOrder = 6
+    OnClick = btn_GravarClick
   end
   object Button1: TButton
     Left = 183
@@ -229,6 +231,7 @@ object Form1: TForm1
     Top = 400
   end
   object FDContatos: TFDTable
+    BeforePost = FDContatosBeforePost
     Connection = FDConnection1
     Left = 120
     Top = 400

@@ -48,6 +48,8 @@ Atalho f12 para alternar codigo e desingner
 - LIGA A TABELA AOS COMPONENTES VISUAIS
 - DataSet ligar a a tabela TFDTable
 
+-> Gravando no Banco de Dados 
+O evento BeforePost da TFDTable de contatos
 
 
 Passo a passo conectado ao banco

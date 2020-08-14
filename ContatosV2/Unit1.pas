@@ -32,9 +32,14 @@ type
     Button1: TButton;
     Button2: TButton;
     procedure  carrega;
+    procedure limpar;
+    procedure bloqueia;
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure btn_NovoClick(Sender: TObject);
+    procedure btn_GravarClick(Sender: TObject);
+    procedure FDContatosBeforePost(DataSet: TDataSet);
   private
     { Private declarations }
   public
@@ -48,6 +53,53 @@ implementation
 
 {$R *.dfm}
 
+procedure Tform1.bloqueia;
+begin
+  // Bloqueia Campos
+
+  txt_Nome.Enabled           :=   not     txt_Nome.Enabled;
+  txt_Email.Enabled          :=   not     txt_Email.Enabled;
+  txt_Telefone.Enabled       :=   not     txt_Telefone.Enabled;
+  txt_observacao.Enabled     :=   not     txt_observacao.Enabled;
+
+end;
+procedure Tform1.limpar;
+begin
+  //Limar Campos
+  txt_ID.Text                 := '';
+  txt_Nome.text               := '';
+  txt_Email.text              := '';
+  txt_Telefone.text           := '';
+  txt_observacao.text         := '';
+  txt_Nome.SetFocus;
+end;
+
+procedure TForm1.carrega;
+begin
+  txt_ID.Text             := FDContatos.FieldByName('id').Value;
+  txt_Nome.Text           := FDContatos.FieldByName('nome').Value;
+  txt_Email.Text          := FDContatos.FieldByName('email').Value;
+  txt_Telefone.Text       := FDContatos.FieldByName('telefone').Value;
+if FDContatos.FieldByName('observacoes').Value = NULL then
+txt_observacao.Text := ''
+else
+  txt_observacao.Text     := FDContatos.FieldByName('observacoes').Value;
+end;
+
+procedure TForm1.btn_GravarClick(Sender: TObject);
+begin
+  FDContatos.Post;
+  bloqueia;
+  ShowMessage('Dados Gravados');
+end;
+
+procedure TForm1.btn_NovoClick(Sender: TObject);
+begin
+FDContatos.Insert;
+bloqueia;
+limpar;
+end;
+
 procedure TForm1.Button1Click(Sender: TObject);
 begin
  FDContatos.Next;
@@ -60,14 +112,15 @@ begin
    carrega;
 end;
 
-procedure TForm1.carrega;
+procedure TForm1.FDContatosBeforePost(DataSet: TDataSet);
 begin
-  txt_ID.Text             := FDContatos.FieldByName('id').Value;
-  txt_Nome.Text           := FDContatos.FieldByName('nome').Value;
-  txt_Email.Text          := FDContatos.FieldByName('email').Value;
-  txt_Telefone.Text       := FDContatos.FieldByName('telefone').Value;
-  txt_observacao.Text     := FDContatos.FieldByName('observacoes').Value;
+FDContatos.FieldByName('nome').Value        :=   txt_Nome.Text;
+FDContatos.FieldByName('email').Value       :=   txt_Email.Text;
+FDContatos.FieldByName('telefone').value    :=   txt_Telefone.Text;
+FDContatos.FieldByName('observacoes').value :=   txt_observacao.Text;
+
 end;
+
 procedure TForm1.FormCreate(Sender: TObject);
 begin
 FDConnection1.Params.Database:=  GetCurrentDir+'\assets\contatos.mdb';
