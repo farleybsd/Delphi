@@ -31,6 +31,8 @@ type
     status: TLabel;
     Button1: TButton;
     Button2: TButton;
+    btn_Deletar: TButton;
+    btn_Editar: TButton;
     procedure  carrega;
     procedure limpar;
     procedure bloqueia;
@@ -40,6 +42,8 @@ type
     procedure btn_NovoClick(Sender: TObject);
     procedure btn_GravarClick(Sender: TObject);
     procedure FDContatosBeforePost(DataSet: TDataSet);
+    procedure btn_DeletarClick(Sender: TObject);
+    procedure btn_EditarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -84,6 +88,19 @@ if FDContatos.FieldByName('observacoes').Value = NULL then
 txt_observacao.Text := ''
 else
   txt_observacao.Text     := FDContatos.FieldByName('observacoes').Value;
+end;
+
+procedure TForm1.btn_DeletarClick(Sender: TObject);
+begin
+ FDContatos.Delete;
+ carrega;
+
+end;
+
+procedure TForm1.btn_EditarClick(Sender: TObject);
+begin
+bloqueia;
+ FDContatos.Edit;
 end;
 
 procedure TForm1.btn_GravarClick(Sender: TObject);

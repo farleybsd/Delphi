@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 460
+  ClientHeight = 514
   ClientWidth = 635
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -194,8 +194,8 @@ object Form1: TForm1
     OnClick = btn_GravarClick
   end
   object Button1: TButton
-    Left = 183
-    Top = 344
+    Left = 55
+    Top = 392
     Width = 41
     Height = 33
     Caption = '>'
@@ -209,8 +209,8 @@ object Form1: TForm1
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 230
-    Top = 344
+    Left = 102
+    Top = 392
     Width = 43
     Height = 33
     Caption = '<'
@@ -223,22 +223,52 @@ object Form1: TForm1
     TabOrder = 8
     OnClick = Button2Click
   end
+  object btn_Deletar: TButton
+    Left = 183
+    Top = 344
+    Width = 75
+    Height = 33
+    Caption = 'Deletar'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 9
+    OnClick = btn_DeletarClick
+  end
+  object btn_Editar: TButton
+    Left = 264
+    Top = 344
+    Width = 75
+    Height = 33
+    Caption = 'Editar'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 10
+    OnClick = btn_EditarClick
+  end
   object FDConnection1: TFDConnection
     Params.Strings = (
       'Database=C:\MyGit\Delphi\Win32\Debug\assets\contatos.mdb'
       'DriverID=MSAcc')
     Left = 32
-    Top = 400
+    Top = 464
   end
   object FDContatos: TFDTable
     BeforePost = FDContatosBeforePost
     Connection = FDConnection1
     Left = 120
-    Top = 400
+    Top = 464
   end
   object DataSource1: TDataSource
     DataSet = FDContatos
     Left = 200
-    Top = 400
+    Top = 464
   end
 end
