@@ -253,6 +253,34 @@ object Form1: TForm1
     TabOrder = 10
     OnClick = btn_EditarClick
   end
+  object btn_Cancelar: TButton
+    Left = 345
+    Top = 344
+    Width = 81
+    Height = 33
+    Caption = 'Cancelar'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 11
+    OnClick = btn_CancelarClick
+  end
+  object txt_procura: TEdit
+    Left = 368
+    Top = 13
+    Width = 121
+    Height = 31
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 12
+  end
   object FDConnection1: TFDConnection
     Params.Strings = (
       'Database=C:\MyGit\Delphi\Win32\Debug\assets\contatos.mdb'

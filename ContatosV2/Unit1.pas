@@ -33,6 +33,8 @@ type
     Button2: TButton;
     btn_Deletar: TButton;
     btn_Editar: TButton;
+    btn_Cancelar: TButton;
+    txt_procura: TEdit;
     procedure  carrega;
     procedure limpar;
     procedure bloqueia;
@@ -44,6 +46,7 @@ type
     procedure FDContatosBeforePost(DataSet: TDataSet);
     procedure btn_DeletarClick(Sender: TObject);
     procedure btn_EditarClick(Sender: TObject);
+    procedure btn_CancelarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -52,7 +55,7 @@ type
 
 var
   Form1: TForm1;
-
+  estado: Integer;
 implementation
 
 {$R *.dfm}
@@ -90,6 +93,16 @@ else
   txt_observacao.Text     := FDContatos.FieldByName('observacoes').Value;
 end;
 
+procedure TForm1.btn_CancelarClick(Sender: TObject);
+begin
+limpar;
+if estado = 1 then
+FDContatos.Prior;
+carrega;
+bloqueia;
+estado:=0;
+end;
+
 procedure TForm1.btn_DeletarClick(Sender: TObject);
 begin
  FDContatos.Delete;
@@ -115,6 +128,7 @@ begin
 FDContatos.Insert;
 bloqueia;
 limpar;
+estado :=  1;
 end;
 
 procedure TForm1.Button1Click(Sender: TObject);

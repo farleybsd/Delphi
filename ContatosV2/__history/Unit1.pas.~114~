@@ -31,6 +31,9 @@ type
     status: TLabel;
     Button1: TButton;
     Button2: TButton;
+    btn_Deletar: TButton;
+    btn_Editar: TButton;
+    btn_Cancelar: TButton;
     procedure  carrega;
     procedure limpar;
     procedure bloqueia;
@@ -39,6 +42,10 @@ type
     procedure Button2Click(Sender: TObject);
     procedure btn_NovoClick(Sender: TObject);
     procedure btn_GravarClick(Sender: TObject);
+    procedure FDContatosBeforePost(DataSet: TDataSet);
+    procedure btn_DeletarClick(Sender: TObject);
+    procedure btn_EditarClick(Sender: TObject);
+    procedure btn_CancelarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -85,11 +92,32 @@ else
   txt_observacao.Text     := FDContatos.FieldByName('observacoes').Value;
 end;
 
+procedure TForm1.btn_CancelarClick(Sender: TObject);
+begin
+limpar;
+FDContatos.Prior;
+carrega;
+bloqueia;
+end;
+
+procedure TForm1.btn_DeletarClick(Sender: TObject);
+begin
+ FDContatos.Delete;
+ carrega;
+
+end;
+
+procedure TForm1.btn_EditarClick(Sender: TObject);
+begin
+bloqueia;
+ FDContatos.Edit;
+end;
+
 procedure TForm1.btn_GravarClick(Sender: TObject);
 begin
   FDContatos.Post;
   bloqueia;
-  ShowMessage('Dados Gravados);
+  ShowMessage('Dados Gravados');
 end;
 
 procedure TForm1.btn_NovoClick(Sender: TObject);
@@ -109,6 +137,15 @@ procedure TForm1.Button2Click(Sender: TObject);
 begin
    FDContatos.Prior;
    carrega;
+end;
+
+procedure TForm1.FDContatosBeforePost(DataSet: TDataSet);
+begin
+FDContatos.FieldByName('nome').Value        :=   txt_Nome.Text;
+FDContatos.FieldByName('email').Value       :=   txt_Email.Text;
+FDContatos.FieldByName('telefone').value    :=   txt_Telefone.Text;
+FDContatos.FieldByName('observacoes').value :=   txt_observacao.Text;
+
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);

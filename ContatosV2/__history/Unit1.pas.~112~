@@ -43,6 +43,7 @@ type
     procedure btn_GravarClick(Sender: TObject);
     procedure FDContatosBeforePost(DataSet: TDataSet);
     procedure btn_DeletarClick(Sender: TObject);
+    procedure btn_EditarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -92,7 +93,14 @@ end;
 procedure TForm1.btn_DeletarClick(Sender: TObject);
 begin
  FDContatos.Delete;
- FDContatos.Prior;
+ carrega;
+
+end;
+
+procedure TForm1.btn_EditarClick(Sender: TObject);
+begin
+bloqueia;
+ FDContatos.Edit;
 end;
 
 procedure TForm1.btn_GravarClick(Sender: TObject);
