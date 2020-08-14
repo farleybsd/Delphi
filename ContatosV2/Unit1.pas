@@ -109,6 +109,9 @@ procedure TForm1.SpeedButton3Click(Sender: TObject);
 begin
 OpenDialog1.Execute();
 Img_Foto.Picture.LoadFromFile(OpenDialog1.FileName);
+FDContatos.Edit;
+FDContatos.FieldByName('foto').Value :=  OpenDialog1.FileName;
+FDContatos.Post;
 end;
 
 procedure TForm1.carrega;
@@ -121,6 +124,13 @@ if FDContatos.FieldByName('observacoes').Value = NULL then
 txt_observacao.Text := ''
 else
   txt_observacao.Text     := FDContatos.FieldByName('observacoes').Value;
+if FDContatos.FieldByName('foto').Value <> null  then
+    begin
+          if FileExists(FDContatos.FieldByName('foto').Value ) then
+          Img_Foto.Picture.LoadFromFile(FDContatos.FieldByName('foto').Value)
+    end
+else
+Img_Foto.Picture := nil;
 end;
 
 procedure TForm1.DBGrid1DblClick(Sender: TObject);
