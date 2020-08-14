@@ -194,6 +194,15 @@ object Form1: TForm1
     TabOrder = 7
     OnClick = Button1Click
   end
+  object Button2: TButton
+    Left = 336
+    Top = 75
+    Width = 105
+    Height = 51
+    Caption = 'Button2'
+    TabOrder = 8
+    OnClick = Button2Click
+  end
   object FDConnection1: TFDConnection
     Params.Strings = (
       'Database=C:\MyGit\Delphi\Win32\Debug\assets\contatos.mdb'

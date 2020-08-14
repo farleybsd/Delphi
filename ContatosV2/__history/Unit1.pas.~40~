@@ -29,8 +29,10 @@ type
     btn_Novo: TButton;
     btn_Gravar: TButton;
     Button1: TButton;
-    Label5: TLabel;
+    status: TLabel;
+    Button2: TButton;
     procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -46,12 +48,22 @@ implementation
 
 procedure TForm1.Button1Click(Sender: TObject);
 begin
-Label5.Caption:=  GetCurrentDir+'\assets\contatos.mdb'      ;
-//ShowMessage(GetCurrentDir+'\assets\contatos.mdb');
 FDConnection1.Params.Database:=  GetCurrentDir+'\assets\contatos.mdb';
-//FDConnection1.Connected :=true;
-//FDContatos.TableName := 'contatos';
-//FDContatos.Active :=true;
+FDConnection1.Connected :=true;
+FDContatos.TableName := 'contatos';
+FDContatos.Active :=true;
+
+if FDConnection1.Connected then
+  begin
+  status.Caption := 'Conectado';
+  end;
+
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+  txt_ID.Text        := FDContatos.FieldByName('id').Value;
+  txt_Nome.Text        := FDContatos.FieldByName('nome').Value;
 end;
 
 end.
